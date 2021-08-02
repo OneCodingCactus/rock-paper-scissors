@@ -16,6 +16,7 @@ let input = prompt("Rock, paper or scissors?").toLowerCase();
 
 //takes choices of pc and player and declares winner
 function playRound(playerSelection, computerSelection) {
+    computerSelection=computerSelection.toLowerCase();
     switch (true) {
         case (playerSelection === "rock" && computerSelection === "paper"):
         case (playerSelection === "paper" && computerSelection === "scissors"):
@@ -23,7 +24,7 @@ function playRound(playerSelection, computerSelection) {
             return `You lose! ${computerSelection} beats ${playerSelection}.`
             break;
         case (playerSelection === computerSelection):
-            return `Draw. ${computerSelection} cannot ${playerSelection}.`
+            return `Draw. ${computerSelection} cannot beat ${playerSelection}.`
             break;
         default:
             return `You win! ${playerSelection} beats ${computerSelection}.`
@@ -33,4 +34,5 @@ function playRound(playerSelection, computerSelection) {
 
 //tests function playRound
 let computerSelection=computerPlay();
+console.log(computerSelection);
 console.log(playRound(input, computerSelection));
