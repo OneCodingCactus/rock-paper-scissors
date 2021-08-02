@@ -1,3 +1,4 @@
+//returns random choice out of array
 function computerPlay() {
     let options = [
         "Rock",
@@ -7,10 +8,13 @@ function computerPlay() {
     return options[Math.floor(Math.random() * options.length)];
 }
 
+//tests output
 console.log(computerPlay());
 
+//user input
 let input = prompt("Rock, paper or scissors?").toLowerCase();
 
+//takes choices of pc and player and declares winner
 function playRound(playerSelection, computerSelection) {
     switch (true) {
         case (playerSelection === "rock" && computerSelection === "paper"):
