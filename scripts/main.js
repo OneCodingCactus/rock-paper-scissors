@@ -20,13 +20,17 @@ function playRound(playerSelection, computerSelection) {
         case (playerSelection === "rock" && computerSelection === "paper"):
         case (playerSelection === "paper" && computerSelection === "scissors"):
         case (playerSelection === "scissors" && computerSelection === "rock"):
-            return "You lose! ${computerSelection} beats ${playerSelection}."
+            return `You lose! ${computerSelection} beats ${playerSelection}.`
             break;
         case (playerSelection === computerSelection):
-            return "Draw. ${computerSelection} cannot ${playerSelection}."
+            return `Draw. ${computerSelection} cannot ${playerSelection}.`
             break;
         default:
-            return "You win! ${playerSelection} beats ${computerSelection}."
+            return `You win! ${playerSelection} beats ${computerSelection}.`
             break;
         }
 }
+
+//tests function playRound
+let computerSelection=computerPlay();
+console.log(playRound(input, computerSelection));
