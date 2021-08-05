@@ -11,6 +11,11 @@ function computerPlay() {
     return options[Math.floor(Math.random() * options.length)];
 }
 
+function capitalizeFirstLetter(notCapitalized){
+    let capitalized=notCapitalized[0].toUpperCase()+notCapitalized.slice(1);
+    return capitalized;
+}
+
 //takes choices of pc and player and declares winner of each round
 function playRound(playerSelection, computerSelection) {
 
@@ -19,14 +24,16 @@ function playRound(playerSelection, computerSelection) {
         case (playerSelection === "paper" && computerSelection === "scissors"):
         case (playerSelection === "scissors" && computerSelection === "rock"):
             computerScore++;
-            console.log(`computer wins`);
+            computerSelection=capitalizeFirstLetter(computerSelection);
+            console.log(`You lose! ${computerSelection} beats ${playerSelection}.`);
             break;
         case (playerSelection === computerSelection):
-            console.log(`draw`);
+            console.log(`It´s a draw!`);
             break;
         default:
             playerScore++;
-            console.log(`player wins`);
+            playerSelection=capitalizeFirstLetter(playerSelection);
+            console.log(`You win! ${playerSelection} beats ${computerSelection}.`);
             break;
         }
 }
@@ -34,11 +41,11 @@ function playRound(playerSelection, computerSelection) {
 //declares winner at the end of the game
 function declareWinner(){
     if(playerScore>computerScore){
-        console.log `You are the winner!`;
+        console.log(`You are the winner!`);
     }else if (playerScore<computerScore) {
-        console.log `The computer is the winner!`;
+        console.log(`The computer is the winner!`);
     } else {
-        console.log `It's a draw!`;
+        console.log(`It´s a draw!`);
     }
 }
 
