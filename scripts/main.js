@@ -48,17 +48,3 @@ function declareWinner(){
         console.log(`It´s a draw!`);
     }
 }
-
-function game(){
-    for(let i=0;i<5;i++){
-        let playerSelection = prompt("Rock, paper or scissors?");
-        playerSelection=playerSelection.toLowerCase();
-        let computerSelection=computerPlay();
-        computerSelection=computerSelection.toLowerCase();
-        playRound(playerSelection, computerSelection);
-    }
-
-    declareWinner();
-}
-
-game();
