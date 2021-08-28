@@ -4,9 +4,9 @@ let computerScore=0;
 //returns random choice out of array
 function computerPlay() {
     let options = [
-        "Rock",
-        "Paper",
-        "Scissors"
+        "rock",
+        "paper",
+        "scissors"
     ]
     return options[Math.floor(Math.random() * options.length)];
 }
