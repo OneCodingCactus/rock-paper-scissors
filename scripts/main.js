@@ -19,6 +19,9 @@ function capitalizeFirstLetter(notCapitalized){
 //takes choices of pc and player and declares winner of each round
 function playRound(playerSelection, computerSelection) {
 
+    console.log(playerSelection);
+    console.log(computerSelection);
+
     switch (true) {
         case (playerSelection === "rock" && computerSelection === "paper"):
         case (playerSelection === "paper" && computerSelection === "scissors"):
@@ -52,7 +55,7 @@ function declareWinner(){
 
 const buttons=document.querySelectorAll('button');
 buttons.forEach((button) => {
-    button.addEventListener('click', () => {
-        alert(button.id);
+    button.addEventListener('click', function() {
+        playRound(button.id, computerPlay());
     });
 });
