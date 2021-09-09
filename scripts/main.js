@@ -1,5 +1,8 @@
 let playerScore=0;
 let computerScore=0;
+const runningScorePlayer=document.querySelector("#runningScorePlayer");
+const runningScoreComputer=document.querySelector("#runningScoreComputer");
+
 const result=document.querySelector("#displayResults");
 const winnerAnnouncement=document.querySelector("#winnerAnnouncement");
 
@@ -29,6 +32,7 @@ function playRound(playerSelection, computerSelection) {
         case (playerSelection === "paper" && computerSelection === "scissors"):
         case (playerSelection === "scissors" && computerSelection === "rock"):
             computerScore++;
+            runningScoreComputer.textContent=`${computerScore}`;
             computerSelection=capitalizeFirstLetter(computerSelection);
             result.textContent=`You lose! ${computerSelection} beats ${playerSelection}.`;
             break;
@@ -37,6 +41,7 @@ function playRound(playerSelection, computerSelection) {
             break;
         default:
             playerScore++;
+            runningScorePlayer.textContent=`${playerScore}`;
             playerSelection=capitalizeFirstLetter(playerSelection);
             result.textContent=`You win! ${playerSelection} beats ${computerSelection}.`;
             break;
