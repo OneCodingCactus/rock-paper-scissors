@@ -1,6 +1,7 @@
 let playerScore=0;
 let computerScore=0;
-const result=document.querySelector('#displayResults');
+const result=document.querySelector("#displayResults");
+const winnerAnnouncement=document.querySelector("#winnerAnnouncement");
 
 //returns random choice out of array
 function computerPlay() {
@@ -45,18 +46,18 @@ function playRound(playerSelection, computerSelection) {
 //declares winner at the end of the game
 function declareWinner(){
     if(playerScore>computerScore){
-        console.log(`You are the winner!`);
+        winnerAnnouncement.textContent(`You are the winner!`);
     }else if (playerScore<computerScore) {
-        console.log(`The computer is the winner!`);
+        winnerAnnouncement.textContent(`The computer is the winner!`);
     } else {
-        console.log(`It´s a draw!`);
+        winnerAnnouncement.textContent(`It´s a draw!`);
     }
 }
 
 
-const buttons=document.querySelectorAll('button');
+const buttons=document.querySelectorAll("button");
 buttons.forEach((button) => {
-    button.addEventListener('click', function() {
+    button.addEventListener("click", function() {
         playRound(button.id, computerPlay());
     });
 });
