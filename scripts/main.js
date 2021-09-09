@@ -1,5 +1,6 @@
 let playerScore=0;
 let computerScore=0;
+const result=document.querySelector('#displayResults');
 
 //returns random choice out of array
 function computerPlay() {
@@ -28,15 +29,15 @@ function playRound(playerSelection, computerSelection) {
         case (playerSelection === "scissors" && computerSelection === "rock"):
             computerScore++;
             computerSelection=capitalizeFirstLetter(computerSelection);
-            console.log(`You lose! ${computerSelection} beats ${playerSelection}.`);
+            result.textContent=`You lose! ${computerSelection} beats ${playerSelection}.`;
             break;
         case (playerSelection === computerSelection):
-            console.log(`It´s a draw!`);
+            result.textContent=`It´s a draw!`;
             break;
         default:
             playerScore++;
             playerSelection=capitalizeFirstLetter(playerSelection);
-            console.log(`You win! ${playerSelection} beats ${computerSelection}.`);
+            result.textContent=`You win! ${playerSelection} beats ${computerSelection}.`;
             break;
         }
 }
