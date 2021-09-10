@@ -35,6 +35,9 @@ function playRound(playerSelection, computerSelection) {
             runningScoreComputer.textContent=`${computerScore}`;
             computerSelection=capitalizeFirstLetter(computerSelection);
             result.textContent=`You lose! ${computerSelection} beats ${playerSelection}.`;
+            if(computerScore==5){
+                declareWinner();
+            }
             break;
         case (playerSelection === computerSelection):
             result.textContent=`It´s a draw!`;
@@ -44,6 +47,9 @@ function playRound(playerSelection, computerSelection) {
             runningScorePlayer.textContent=`${playerScore}`;
             playerSelection=capitalizeFirstLetter(playerSelection);
             result.textContent=`You win! ${playerSelection} beats ${computerSelection}.`;
+            if(playerScore==5){
+                declareWinner();
+            }
             break;
         }
 }
@@ -51,11 +57,9 @@ function playRound(playerSelection, computerSelection) {
 //declares winner at the end of the game
 function declareWinner(){
     if(playerScore>computerScore){
-        winnerAnnouncement.textContent(`You are the winner!`);
-    }else if (playerScore<computerScore) {
-        winnerAnnouncement.textContent(`The computer is the winner!`);
+        winnerAnnouncement.textContent="You are the winner!";
     } else {
-        winnerAnnouncement.textContent(`It´s a draw!`);
+        winnerAnnouncement.textContent="The computer is the winner!";
     }
 }
 
