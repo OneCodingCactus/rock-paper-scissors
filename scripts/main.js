@@ -5,6 +5,13 @@ const runningScoreComputer=document.querySelector("#runningScoreComputer");
 
 const result=document.querySelector("#displayResults");
 const winnerAnnouncement=document.querySelector("#winnerAnnouncement");
+const restartBox=document.querySelector("#restartBox");
+const restartText=document.querySelector("#restartText");
+const restartButton=document.createElement("button");
+restartButton.textContent="Restart Game";
+restartButton.addEventListener("click", function(){
+    restartGame();
+});
 
 //returns random choice out of array
 function computerPlay() {
@@ -37,6 +44,7 @@ function playRound(playerSelection, computerSelection) {
             result.textContent=`You lose! ${computerSelection} beats ${playerSelection}.`;
             if(computerScore==5){
                 declareWinner();
+                askForRestart();
             }
             break;
         case (playerSelection === computerSelection):
@@ -49,6 +57,7 @@ function playRound(playerSelection, computerSelection) {
             result.textContent=`You win! ${playerSelection} beats ${computerSelection}.`;
             if(playerScore==5){
                 declareWinner();
+                askForRestart();
             }
             break;
         }
@@ -70,3 +79,17 @@ buttons.forEach((button) => {
         playRound(button.id, computerPlay());
     });
 });
+
+function askForRestart(){
+    restartText.textContent="Do you want to play again?";
+    restartBox.appendChild(restartButton);
+}
+
+function restartGame(){
+    computerScore=0;
+    playerScore=0;
+    runningScoreComputer.textContent=`${computerScore}`;
+    runningScorePlayer.textContent=`${playerScore}`;
+    winnerAnnouncement.textContent="";
+    restartBox.remove();
+}
