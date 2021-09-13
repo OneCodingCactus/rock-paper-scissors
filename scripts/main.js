@@ -43,6 +43,9 @@ function playRound(playerSelection, computerSelection) {
             computerSelection=capitalizeFirstLetter(computerSelection);
             result.textContent=`You lose! ${computerSelection} beats ${playerSelection}.`;
             if(computerScore==5){
+                buttons.forEach((button) => {
+                    button.disabled=true;
+                })
                 declareWinner();
                 askForRestart();
             }
@@ -56,6 +59,9 @@ function playRound(playerSelection, computerSelection) {
             playerSelection=capitalizeFirstLetter(playerSelection);
             result.textContent=`You win! ${playerSelection} beats ${computerSelection}.`;
             if(playerScore==5){
+                buttons.forEach((button) => {
+                    button.disabled=true;
+                })
                 declareWinner();
                 askForRestart();
             }
@@ -93,5 +99,8 @@ function restartGame(){
     winnerAnnouncement.textContent="";
     restartText.textContent="";
     restartButton.remove();
-    
+    buttons.forEach((button) => {
+        button.disabled=false;
+    })
+    result.textContent="";
 }
