@@ -17,3 +17,19 @@
     position: absolute;
     bottom: 0;
 }
+
+.displayRunningScore{
+    display: flex;
+    width: 260px;
+    margin: 0 auto;
+}
+
+#runningScorePlayer{
+    width: 50%;
+    background-color:darkolivegreen;
+}
+
+#runningScoreComputer{
+    width: 50%;
+    background-color:darkgoldenrod;
+}
