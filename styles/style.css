@@ -41,4 +41,21 @@
 
 #displayResults{
     font-size: 40px;
+    width: 700px;
+    margin: auto;
+    padding: 30px;
+}
+
+#winnerAnnouncement{
+    font-size: 65px;
+    width: 700px;
+    margin: auto;
+    padding: 30px;
+}
+
+#restartBox{
+    font-size: 35px;
+    width: 700px;
+    margin: auto;
+    padding: 30px;
 }

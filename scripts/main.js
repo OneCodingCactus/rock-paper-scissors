@@ -9,6 +9,8 @@ const restartBox=document.querySelector("#restartBox");
 const restartText=document.querySelector("#restartText");
 const restartButton=document.createElement("button");
 restartButton.textContent="Restart Game";
+restartButton.style.fontSize="30px";
+restartButton.style.margin="10px";
 restartButton.addEventListener("click", function(){
     restartGame();
 });
