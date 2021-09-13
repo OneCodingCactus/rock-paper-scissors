@@ -4,27 +4,36 @@
         <meta charset="utf-8">
         <title>Rock-paper-scissors</title>
         <link href="styles/reset.css" rel="stylesheet">
+        <link href="styles/style.css" rel="stylesheet">
     </head>
 
     <body>
-        <div class="displayRunningScore">
-            <div id="runningScorePlayer">0</div>
-            <div id="runningScoreComputer">0</div>
-        </div>
-
-        <div id="displayResults"></div>
         
-        <div id="container">
+        <div id="upperContainer">
+            <div class="displayRunningScore">
+                <div id="runningScorePlayer">0</div>
+                <div id="runningScoreComputer">0</div>
+            </div>
+        </div>
+        
+
+        <div id="middleContainer">
+            <div id="displayResults"></div>
+
+            <div id="winnerAnnouncement"></div>
+
+            <div id="restartBox">
+                <div id="restartText"></div>
+            </div>
+        </div>
+        
+        <div id="lowerContainer">
             <button id="rock">Rock</button>
             <button id="paper">Paper</button>
             <button id="scissors">Scissors</button>
         </div>
 
-        <div id="winnerAnnouncement"></div>
 
-        <div id="restartBox">
-            <div id="restartText"></div>
-        </div>
 
         <script src="scripts/main.js"></script>
     </body>
