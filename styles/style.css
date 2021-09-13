@@ -59,3 +59,19 @@
     margin: auto;
     padding: 30px;
 }
+
+#lowerContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+#rock, #paper, #scissors{
+    font-size: 50px;
+    height: 30%;
+    width: 250px;
+    border-width: 10px;
+    border-radius: 4px;
+    color: rgb(92, 92, 92);
+}
