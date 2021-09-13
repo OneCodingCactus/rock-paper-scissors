@@ -91,5 +91,7 @@ function restartGame(){
     runningScoreComputer.textContent=`${computerScore}`;
     runningScorePlayer.textContent=`${playerScore}`;
     winnerAnnouncement.textContent="";
-    restartBox.remove();
+    restartText.textContent="";
+    restartButton.remove();
+    
 }
