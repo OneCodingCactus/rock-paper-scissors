@@ -24,12 +24,12 @@
     margin: 0 auto;
 }
 
-#runningScorePlayer{
+#runningScorePlayerBox{
     width: 50%;
     background-color:darkolivegreen;
 }
 
-#runningScoreComputer{
+#runningScoreComputerBox{
     width: 50%;
     background-color:darkgoldenrod;
 }
